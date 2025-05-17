@@ -1,0 +1,11 @@
+.DS_Store
+
+.envrc
+.python-version
+
+*.png
+*.svg
+
+pyrightconfig.json
+
+*.pyc

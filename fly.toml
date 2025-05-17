@@ -1,0 +1,12 @@
+app = 'trmnl'
+primary_region = 'arn'
+
+[env]
+BUCKET = 'fi.erick.trmnl'
+
+[processes]
+cron = 'supercronic /crontab'
+
+[[vm]]
+size = 'shared-cpu-1x'
+memory = '256mb'
