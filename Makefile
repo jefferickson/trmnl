@@ -1,14 +1,5 @@
 APP_NAME = trmnl
 
-set-secrets:
-	fly secrets set -a $(APP_NAME) --stage \
-		AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
-		AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
-		AWS_DEFAULT_REGION=$(AWS_DEFAULT_REGION)
-
-deploy: set-secrets
-	fly deploy
-
 lint-and-typecheck:
 	ruff check --fix .
 	ruff format .
