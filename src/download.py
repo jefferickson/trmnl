@@ -77,7 +77,7 @@ def main() -> None:
                 BUCKET,
                 f"porvoo.{name}.latest.png",
             )
-            logging.info("UV done.")
+            logging.info(f"{name} done.")
 
 
 if __name__ == "__main__":
