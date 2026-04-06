@@ -41,8 +41,8 @@ XPATH_SETTINGS = (
     ),
     (
         "electric",
-        "https://nordpool.cc/fi/en/",
-        "/html/body/div/div/div[1]/section/div/div[2]/div[1]/div[2]",
+        "https://vihreaenergia.fi/en/spot-electricity-prices/",
+        '//*[@id="nordpavgtoday"]',
     ),
 )
 
