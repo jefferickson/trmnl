@@ -40,6 +40,11 @@ XPATH_SETTINGS = (
         "/html/body/div[1]/div/div/div[1]/div/div[2]/main/div[3]/div/div[4]/div/div/ol/li[2]/div/div",
     ),
     (
+        "allergies",
+        "https://norkko.fi/",
+        "/html/body/div/div/div/main/article/div/div/div/div/div[1]",
+    ),
+    (
         "electric",
         "https://vihreaenergia.fi/en/spot-electricity-prices/",
         '//*[@id="nordpavgtoday"]',
@@ -63,6 +68,9 @@ def save_screenshot(url: str, xpath: str, tempdir: str, filename: str) -> None:
     img = Image.open(io.BytesIO(image_binary))
     img.save(f"{tempdir}/{filename}")
 
+    driver.close()
+    driver.quit()
+
 
 def main() -> None:
     s3 = boto3.client("s3")
@@ -70,7 +78,12 @@ def main() -> None:
     with tempfile.TemporaryDirectory() as tempdir:
         for name, url, xpath in XPATH_SETTINGS:
             logging.info(f"Trying {name}...")
-            save_screenshot(url, xpath, tempdir, f"{name}.png")
+
+            try:
+                save_screenshot(url, xpath, tempdir, f"{name}.png")
+            except Exception:
+                logging.exception("Something went wrong", exc_info=True)
+
             logging.info("Generated. Now uploading...")
             s3.upload_file(
                 f"{tempdir}/{name}.png",
