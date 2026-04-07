@@ -42,7 +42,7 @@ XPATH_SETTINGS = (
     (
         "allergies",
         "https://norkko.fi/",
-        "/html/body/div/div/div/main/article/div/div/div/div/div[1]",
+        "/html/body/div/div/div/main/article/div/div/div/div/div[1]/figure/figure/img",
     ),
     (
         "electric",
