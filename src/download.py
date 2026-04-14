@@ -75,22 +75,22 @@ def save_screenshot(url: str, xpath: str, tempdir: str, filename: str) -> None:
 def main() -> None:
     s3 = boto3.client("s3")
 
-    with tempfile.TemporaryDirectory() as tempdir:
-        for name, url, xpath in XPATH_SETTINGS:
-            logging.info(f"Trying {name}...")
-
-            try:
+    try:
+        with tempfile.TemporaryDirectory() as tempdir:
+            for name, url, xpath in XPATH_SETTINGS:
+                logging.info(f"Trying {name}...")
                 save_screenshot(url, xpath, tempdir, f"{name}.png")
-            except Exception:
-                logging.exception("Something went wrong", exc_info=True)
 
-            logging.info("Generated. Now uploading...")
-            s3.upload_file(
-                f"{tempdir}/{name}.png",
-                BUCKET,
-                f"porvoo.{name}.latest.png",
-            )
-            logging.info(f"{name} done.")
+                logging.info("Generated. Now uploading...")
+                s3.upload_file(
+                    f"{tempdir}/{name}.png",
+                    BUCKET,
+                    f"porvoo.{name}.latest.png",
+                )
+
+                logging.info(f"{name} done.")
+    except Exception:
+        logging.exception("Something went wrong.", exc_info=True)
 
 
 if __name__ == "__main__":
