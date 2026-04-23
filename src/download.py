@@ -20,6 +20,11 @@ XPATH_SETTINGS = (
         '//*[@id="forecast-page__graph"]',
     ),
     (
+        "current",
+        "https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/2-660561/Finland/Nyland/Porvoo/Borg%C3%A5",
+        "/html/body/div[1]/div/div/div[1]/div/div[2]/main/div[3]/div[1]/div/div[1]",
+    ),
+    (
         "uv",
         "https://www.yr.no/nb/andre-varsler/2-660561/Finland/Nyland/Porvoo/Borg%C3%A5",
         "/html/body/div[1]/div/div/div[1]/div/div[2]/main/div[3]/div/div[3]/div/div/ol/li[1]/div",
