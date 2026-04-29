@@ -2,6 +2,7 @@ APP_NAME = jperickson/trmnl
 
 install-dev-tools:
 	pip install --upgrade pip
+	pip install -r requirements.txt
 	pip install -r requirements-dev.txt
 
 lint-and-typecheck: install-dev-tools
