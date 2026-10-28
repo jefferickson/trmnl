@@ -27,22 +27,22 @@ XPATH_SETTINGS = (
     (
         "uv",
         "https://www.yr.no/nb/andre-varsler/2-660561/Finland/Nyland/Porvoo/Borg%C3%A5",
-        "/html/body/div[1]/div/div/div[1]/div/div[2]/main/div[3]/div/div[3]/div/div/ol/li[1]/div",
+        "/html/body/div[1]/div/div/div[1]/div[2]/div[2]/main/div[3]/div/div[3]/div/div/div[2]",
     ),
     (
         "aurora",
         "https://www.yr.no/nb/andre-varsler/2-660561/Finland/Nyland/Porvoo/Borg%C3%A5",
-        "/html/body/div[1]/div/div/div[1]/div/div[2]/main/div[3]/div/div[3]/div/div/ol/li[2]/div",
+        "/html/body/div[1]/div/div/div[1]/div[2]/div[2]/main/div[3]/div/div[3]/div/div/div[1]",
     ),
     (
         "sun",
         "https://www.yr.no/nb/andre-varsler/2-660561/Finland/Nyland/Porvoo/Borg%C3%A5",
-        "/html/body/div[1]/div/div/div[1]/div/div[2]/main/div[3]/div/div[4]/div/div/ol/li[1]/div/div",
+        "/html/body/div[1]/div/div/div[1]/div[2]/div[2]/main/div[3]/div/div[4]/div/div/div[1]/div",
     ),
     (
         "moon",
         "https://www.yr.no/nb/andre-varsler/2-660561/Finland/Nyland/Porvoo/Borg%C3%A5",
-        "/html/body/div[1]/div/div/div[1]/div/div[2]/main/div[3]/div/div[4]/div/div/ol/li[2]/div/div",
+        "/html/body/div[1]/div/div/div[1]/div[2]/div[2]/main/div[3]/div/div[4]/div/div/div[2]/div",
     ),
     (
         "allergies",
