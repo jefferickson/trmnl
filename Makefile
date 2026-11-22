@@ -13,9 +13,6 @@ lint-and-typecheck: install-dev-tools
 build:
 	DOCKER_DEFAULT_PLATFORM=linux/amd64 docker build . -t $(APP_NAME)
 
-push-image: lint-and-typecheck build
-	docker push $(APP_NAME)
-
 run-locally: build
 	docker run \
 	    -it \
